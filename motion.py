@@ -1,9 +1,18 @@
 import RPi.GPIO as GPIO
 import time
-GPIO.setmode(GPIO.BCM)
+import datetime
+from astral import Astral
 
+# GPIO configuration
+GPIO.setmode(GPIO.BCM)
 PIR_PIN = 7
 GPIO.setup(PIR_PIN, GPIO.IN)
+
+# Astral configuration
+a = Astral()
+a. solar_depression = 'civil'
+city_name='Los Angeles'
+city = a.city_name
 
 try:
 	print "PIR Module Test"
